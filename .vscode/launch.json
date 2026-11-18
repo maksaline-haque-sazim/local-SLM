@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Flutter Template (development)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_development.dart",
+      "toolArgs": ["--flavor", "development"]
+    },
+    {
+      "name": "Flutter Template (staging)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_staging.dart",
+      "toolArgs": ["--flavor", "staging"]
+    },
+    {
+      "name": "Flutter Template (production)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_production.dart",
+      "toolArgs": ["--flavor", "production"]
+    }
+  ]
+}

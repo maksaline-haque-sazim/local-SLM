@@ -1,0 +1,70 @@
+import 'package:get/get.dart';
+
+enum TranslationKeys {
+  loginTitle('login_title'),
+  loginPage('login_page'),
+  loginSubtitle('login_subtitle'),
+  loginEmailLabel('login_email_label'),
+  loginEmailHint('login_email_hint'),
+  loginPasswordLabel('login_password_label'),
+  loginPasswordHint('login_password_hint'),
+  loginSubmit('login_submit'),
+  loginGoToSignUp('login_go_to_sign_up'),
+  loginErrorMessage('login_error_message'),
+  signUpTitle('sign_up_title'),
+  signUpSubtitle('sign_up_subtitle'),
+  signUpNameLabel('sign_up_name_label'),
+  signUpNameHint('sign_up_name_hint'),
+  signUpEmailLabel('sign_up_email_label'),
+  signUpEmailHint('sign_up_email_hint'),
+  signUpPasswordLabel('sign_up_password_label'),
+  signUpPasswordHint('sign_up_password_hint'),
+  signUpConfirmPasswordLabel('sign_up_confirm_password_label'),
+  signUpConfirmPasswordHint('sign_up_confirm_password_hint'),
+  signUpSubmit('sign_up_submit'),
+  signUpGoToLogin('sign_up_go_to_login'),
+  signUpErrorMessage('sign_up_error_message'),
+  drawerLogout('drawer_logout'),
+  homePage('home_page'),
+  validationRequired('validation_required'),
+  errorTitle('error_title'),
+  serverErrorTitle('server_error_title'),
+  serverMaintenanceMessage('server_maintenance_message'),
+  noInternetTitle('no_internet_title'),
+  noInternetMessage('no_internet_message'),
+  settingsTitle('settings_title'),
+  settingsLanguageTitle('settings_language_title'),
+  settingsLanguageSubtitle('settings_language_subtitle'),
+  settingsThemeTitle('settings_theme_title'),
+  settingsThemeSubtitle('settings_theme_subtitle'),
+  snackbarDismiss('snackbar_dismiss'),
+  drawerSettings('drawer_settings'),
+  appName('app_name'),
+  commonDone('common_done'),
+  validationMinLength('validation_min_length'),
+  validationPositiveNumber('validation_positive_number'),
+  validationNonNegativeInteger('validation_non_negative_integer'),
+  drawerCreateProduct('drawer_create_product'),
+  productsCreateTitle('products_create_title'),
+  productsCreateSubtitle('products_create_subtitle'),
+  productsNameLabel('products_name_label'),
+  productsNameHint('products_name_hint'),
+  productsDescriptionLabel('products_description_label'),
+  productsDescriptionHint('products_description_hint'),
+  productsPriceLabel('products_price_label'),
+  productsPriceHint('products_price_hint'),
+  productsStockLabel('products_stock_label'),
+  productsStockHint('products_stock_hint'),
+  productsCreateSubmit('products_create_submit'),
+  productsCreateSuccessTitle('products_create_success_title'),
+  productsCreateSuccessMessage('products_create_success_message'),
+  productsCreateErrorMessage('products_create_error_message');
+
+  final String key;
+
+  const TranslationKeys(this.key);
+
+  String get tr => key.tr;
+
+  String trParams(Map<String, String> params) => key.trParams(params);
+}

@@ -1,0 +1,77 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.flutter_template"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        applicationId = "com.example.flutter_template"
+        minSdk = 21
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig = signingConfigs.debug
+        }
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        development {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            manifestPlaceholders = [
+                appName: "Flutter Template Dev"
+            ]
+        }
+        staging {
+            dimension "default"
+            applicationIdSuffix ".stg"
+            versionNameSuffix "-stg"
+            manifestPlaceholders = [
+                appName: "Flutter Template Staging"
+            ]
+        }
+        production {
+            dimension "default"
+            manifestPlaceholders = [
+                appName: "Flutter Template"
+            ]
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+// Apply after `./flutterfire.config.sh <flavor> <project-id>` creates
+// android/app/src/<flavor>/google-services.json for each flavor.
+def hasGoogleServices = ["development", "staging", "production"].any { flavor ->
+    file("src/${flavor}/google-services.json").exists()
+}
+if (hasGoogleServices) {
+    apply plugin: "com.google.gms.google-services"
+}

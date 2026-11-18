@@ -1,0 +1,22 @@
+{
+  "appName": {
+    "development": "Flutter Template Dev",
+    "staging": "Flutter Template Staging",
+    "production": "Flutter Template"
+  },
+  "android": {
+    "packageName": "com.example.flutter_template",
+    "applicationIdSuffix": {
+      "development": ".dev",
+      "staging": ".stg",
+      "production": ""
+    }
+  },
+  "ios": {
+    "bundleId": {
+      "development": "com.example.flutter_template.dev",
+      "staging": "com.example.flutter_template.stg",
+      "production": "com.example.flutter_template"
+    }
+  }
+}
