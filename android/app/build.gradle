@@ -1,12 +1,10 @@
 plugins {
     id "com.android.application"
-    id "kotlin-android"
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
 }
 
 android {
-    namespace = "com.example.flutter_template"
+    namespace = "com.maksaline.local_slm"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -15,13 +13,13 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17
+    androidResources {
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
     }
 
     defaultConfig {
-        applicationId = "com.example.flutter_template"
-        minSdk = 21
+        applicationId = "com.maksaline.local_slm"
+        minSdkVersion = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -43,7 +41,7 @@ android {
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
             manifestPlaceholders = [
-                appName: "Flutter Template Dev"
+                appName: "Local SLM Dev"
             ]
         }
         staging {
@@ -51,15 +49,21 @@ android {
             applicationIdSuffix ".stg"
             versionNameSuffix "-stg"
             manifestPlaceholders = [
-                appName: "Flutter Template Staging"
+                appName: "Local SLM Staging"
             ]
         }
         production {
             dimension "default"
             manifestPlaceholders = [
-                appName: "Flutter Template"
+                appName: "Local SLM"
             ]
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 

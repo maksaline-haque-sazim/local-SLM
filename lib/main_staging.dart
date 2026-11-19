@@ -5,7 +5,7 @@ import 'package:flutter_getx_starter_template/main.dart' as app;
 
 void main() async {
   final config = await AppConfig.create(
-    appName: 'Flutter Template Staging',
+    appName: 'Local SLM Staging',
     environment: Environment.staging,
     envFile: '.env.staging',
   );

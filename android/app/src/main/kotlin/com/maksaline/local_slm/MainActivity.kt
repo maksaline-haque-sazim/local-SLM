@@ -1,4 +1,4 @@
-package com.example.flutter_template
+package com.maksaline.local_slm
 
 import io.flutter.embedding.android.FlutterActivity
 

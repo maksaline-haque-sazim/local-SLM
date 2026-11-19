@@ -5,7 +5,7 @@ import 'package:flutter_getx_starter_template/main.dart' as app;
 
 void main() async {
   final config = await AppConfig.create(
-    appName: 'Flutter Template Dev',
+    appName: 'Local SLM Dev',
     environment: Environment.development,
     envFile: '.env.development',
   );

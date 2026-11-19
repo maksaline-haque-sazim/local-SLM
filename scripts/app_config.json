@@ -1,11 +1,11 @@
 {
   "appName": {
-    "development": "Flutter Template Dev",
-    "staging": "Flutter Template Staging",
-    "production": "Flutter Template"
+    "development": "Local SLM Dev",
+    "staging": "Local SLM Staging",
+    "production": "Local SLM"
   },
   "android": {
-    "packageName": "com.example.flutter_template",
+    "packageName": "com.maksaline.local_slm",
     "applicationIdSuffix": {
       "development": ".dev",
       "staging": ".stg",
@@ -14,9 +14,9 @@
   },
   "ios": {
     "bundleId": {
-      "development": "com.example.flutter_template.dev",
-      "staging": "com.example.flutter_template.stg",
-      "production": "com.example.flutter_template"
+      "development": "com.maksaline.local_slm.dev",
+      "staging": "com.maksaline.local_slm.stg",
+      "production": "com.maksaline.local_slm"
     }
   }
 }

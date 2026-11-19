@@ -11,7 +11,7 @@ if [[ $# -lt 1 ]]; then
 fi
 
 ENV="$1"
-PACKAGE_BASE="com.example.flutter_template"
+PACKAGE_BASE="com.maksaline.local_slm"
 
 if [[ $# -lt 2 ]]; then
   echo "Enter Firebase project ID for $ENV environment:"
