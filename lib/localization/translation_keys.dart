@@ -58,7 +58,26 @@ enum TranslationKeys {
   productsCreateSubmit('products_create_submit'),
   productsCreateSuccessTitle('products_create_success_title'),
   productsCreateSuccessMessage('products_create_success_message'),
-  productsCreateErrorMessage('products_create_error_message');
+  productsCreateErrorMessage('products_create_error_message'),
+  homeHeadline('home_headline'),
+  homeSubtitle('home_subtitle'),
+  homeHighlightOffline('home_highlight_offline'),
+  homeHighlightPrivate('home_highlight_private'),
+  homeHighlightModel('home_highlight_model'),
+  homeStartChat('home_start_chat'),
+  chatTitle('chat_title'),
+  chatPreparingModel('chat_preparing_model'),
+  chatLoadingModel('chat_loading_model'),
+  chatLoadingHint('chat_loading_hint'),
+  chatLoadErrorTitle('chat_load_error_title'),
+  chatRetry('chat_retry'),
+  chatEmptyTitle('chat_empty_title'),
+  chatEmptySubtitle('chat_empty_subtitle'),
+  chatInputHint('chat_input_hint'),
+  chatYouLabel('chat_you_label'),
+  chatModelLabel('chat_model_label'),
+  chatGenerating('chat_generating'),
+  chatGenerationError('chat_generation_error');
 
   final String key;
 

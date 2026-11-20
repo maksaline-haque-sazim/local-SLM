@@ -24,10 +24,10 @@ class TokenService extends GetxService {
   Future<bool> attemptRefreshToken() async {
     try {
       if (refreshToken == null || refreshToken!.isEmpty) return false;
-      final res = await ApiClientService.instance.httpClientInstance.post<Map<String, dynamic>>(
-        ApiEndpoints.authRefresh,
-        {'refresh_token': refreshToken},
-      );
+      final res = await ApiClientService.instance.httpClientInstance
+          .post<Map<String, dynamic>>(ApiEndpoints.authRefresh, {
+            'refresh_token': refreshToken,
+          });
       if (res.isOk && res.body is Map<String, dynamic>) {
         final body = res.body!;
         final newAccess = body['access_token'] as String?;
@@ -68,5 +68,3 @@ class TokenService extends GetxService {
     await _box.remove('refreshToken');
   }
 }
-
-

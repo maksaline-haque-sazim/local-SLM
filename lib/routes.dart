@@ -2,6 +2,8 @@ import 'package:flutter_getx_starter_template/features/auth/login/bindings/login
 import 'package:flutter_getx_starter_template/features/auth/login/pages/login_page.dart';
 import 'package:flutter_getx_starter_template/features/auth/sign_up/bindings/sign_up_binding.dart';
 import 'package:flutter_getx_starter_template/features/auth/sign_up/pages/sign_up_page.dart';
+import 'package:flutter_getx_starter_template/features/chat/bindings/chat_binding.dart';
+import 'package:flutter_getx_starter_template/features/chat/pages/chat_page.dart';
 import 'package:flutter_getx_starter_template/features/home/bindings/home_binding.dart';
 import 'package:flutter_getx_starter_template/features/home/pages/home_page.dart';
 import 'package:flutter_getx_starter_template/features/products/bindings/create_product_binding.dart';
@@ -13,6 +15,7 @@ import 'package:get/get.dart';
 
 class Routes {
   static const String home = '/home';
+  static const String chat = '/chat';
   static const String login = '/login';
   static const String signUp = '/sign-up';
   static const String settings = '/settings';
@@ -35,19 +38,25 @@ class AppPages {
       name: Routes.home,
       page: () => const HomePage(),
       binding: HomeBinding(),
-      middlewares: [AuthMiddleware(isAuthRequired: true)],
+      middlewares: [AuthMiddleware(isAuthRequired: false)],
+    ),
+    GetPage(
+      name: Routes.chat,
+      page: () => const ChatPage(),
+      binding: ChatBinding(),
+      middlewares: [AuthMiddleware(isAuthRequired: false)],
     ),
     GetPage(
       name: Routes.settings,
       page: () => const SettingsPage(),
       binding: SettingsBinding(),
-      middlewares: [AuthMiddleware(isAuthRequired: true)],
+      middlewares: [AuthMiddleware(isAuthRequired: false)],
     ),
     GetPage(
       name: Routes.createProduct,
       page: () => const CreateProductPage(),
       binding: CreateProductBinding(),
-      middlewares: [AuthMiddleware(isAuthRequired: true)],
+      middlewares: [AuthMiddleware(isAuthRequired: false)],
     ),
   ];
 }

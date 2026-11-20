@@ -87,6 +87,44 @@ class AppTranslations extends Translations {
               'Product created successfully',
           TranslationKeys.productsCreateErrorMessage.key:
               'Failed to create product. Please try again.',
+          TranslationKeys.homeHeadline.key:
+              'Private AI,\nright on your device',
+          TranslationKeys.homeSubtitle.key:
+              'Chat with a small language model that runs fully offline. Nothing ever leaves your phone.',
+          TranslationKeys.homeHighlightOffline.key:
+              'Works without internet',
+          TranslationKeys.homeHighlightPrivate.key:
+              'Your prompts stay on this device',
+          TranslationKeys.homeHighlightModel.key:
+              'Powered by SmolLM2 135M',
+          TranslationKeys.homeStartChat.key:
+              'Start chatting',
+          TranslationKeys.chatTitle.key:
+              'Chat',
+          TranslationKeys.chatPreparingModel.key:
+              'Preparing model',
+          TranslationKeys.chatLoadingModel.key:
+              'Loading model into memory',
+          TranslationKeys.chatLoadingHint.key:
+              'This can take a few moments the first time.',
+          TranslationKeys.chatLoadErrorTitle.key:
+              'Could not load the model',
+          TranslationKeys.chatRetry.key:
+              'Try again',
+          TranslationKeys.chatEmptyTitle.key:
+              'Ask anything',
+          TranslationKeys.chatEmptySubtitle.key:
+              'The model is ready. Type a prompt below to get a reply.',
+          TranslationKeys.chatInputHint.key:
+              'Type a prompt',
+          TranslationKeys.chatYouLabel.key:
+              'You',
+          TranslationKeys.chatModelLabel.key:
+              'SmolLM2',
+          TranslationKeys.chatGenerating.key:
+              'Thinking',
+          TranslationKeys.chatGenerationError.key:
+              'Something went wrong while generating a reply.',
         },
         'ar': {
           TranslationKeys.loginTitle.key: 'مرحباً بعودتك',
@@ -162,6 +200,44 @@ class AppTranslations extends Translations {
               'تم إنشاء المنتج بنجاح',
           TranslationKeys.productsCreateErrorMessage.key:
               'فشل إنشاء المنتج. يرجى المحاولة مرة أخرى.',
+          TranslationKeys.homeHeadline.key:
+              'ذكاء اصطناعي خاص،\nعلى جهازك مباشرة',
+          TranslationKeys.homeSubtitle.key:
+              'تحدث مع نموذج لغوي صغير يعمل بدون إنترنت بالكامل. لا شيء يغادر هاتفك.',
+          TranslationKeys.homeHighlightOffline.key:
+              'يعمل بدون إنترنت',
+          TranslationKeys.homeHighlightPrivate.key:
+              'تبقى رسائلك على هذا الجهاز',
+          TranslationKeys.homeHighlightModel.key:
+              'مدعوم بنموذج SmolLM2 135M',
+          TranslationKeys.homeStartChat.key:
+              'ابدأ المحادثة',
+          TranslationKeys.chatTitle.key:
+              'المحادثة',
+          TranslationKeys.chatPreparingModel.key:
+              'جارٍ تجهيز النموذج',
+          TranslationKeys.chatLoadingModel.key:
+              'جارٍ تحميل النموذج في الذاكرة',
+          TranslationKeys.chatLoadingHint.key:
+              'قد يستغرق هذا بعض الوقت في المرة الأولى.',
+          TranslationKeys.chatLoadErrorTitle.key:
+              'تعذر تحميل النموذج',
+          TranslationKeys.chatRetry.key:
+              'حاول مرة أخرى',
+          TranslationKeys.chatEmptyTitle.key:
+              'اسأل أي شيء',
+          TranslationKeys.chatEmptySubtitle.key:
+              'النموذج جاهز. اكتب رسالة بالأسفل للحصول على رد.',
+          TranslationKeys.chatInputHint.key:
+              'اكتب رسالتك',
+          TranslationKeys.chatYouLabel.key:
+              'أنت',
+          TranslationKeys.chatModelLabel.key:
+              'SmolLM2',
+          TranslationKeys.chatGenerating.key:
+              'جارٍ التفكير',
+          TranslationKeys.chatGenerationError.key:
+              'حدث خطأ أثناء إنشاء الرد.',
         },
       };
 }

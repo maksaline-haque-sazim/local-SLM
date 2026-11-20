@@ -12,10 +12,7 @@ class AuthService extends GetxService {
 
   AuthenticatedUser? get user => _user.value;
 
-  Future<void> login({
-    required String email,
-    required String password,
-  }) async {
+  Future<void> login({required String email, required String password}) async {
     final trimmedEmail = email.trim();
     _user.value = AuthenticatedUser(
       id: 'demo-user',

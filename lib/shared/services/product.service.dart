@@ -17,7 +17,10 @@ class ProductService extends GetxService {
   Future<void> fetchProducts({int page = 1, int limit = 10}) async {
     try {
       isLoading.value = true;
-      final fetchedProducts = await _repository.getAllProducts(page: page, limit: limit);
+      final fetchedProducts = await _repository.getAllProducts(
+        page: page,
+        limit: limit,
+      );
       products.value = fetchedProducts;
     } catch (e) {
       rethrow;
@@ -52,10 +55,16 @@ class ProductService extends GetxService {
     }
   }
 
-  Future<ProductEntity> updateProduct(String id, UpdateProductDto updateProductDto) async {
+  Future<ProductEntity> updateProduct(
+    String id,
+    UpdateProductDto updateProductDto,
+  ) async {
     try {
       isLoading.value = true;
-      final updatedProduct = await _repository.updateProduct(id, updateProductDto);
+      final updatedProduct = await _repository.updateProduct(
+        id,
+        updateProductDto,
+      );
 
       final index = products.indexWhere((p) => p.id == id);
       if (index != -1) {
@@ -90,4 +99,3 @@ class ProductService extends GetxService {
     return products.where((p) => p.isLowStock).toList();
   }
 }
-
