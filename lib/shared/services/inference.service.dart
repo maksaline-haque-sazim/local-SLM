@@ -7,17 +7,13 @@ class InferenceService extends GetxService {
   static InferenceService get instance => Get.find<InferenceService>();
 
   static const GenerationParams _generationParams = GenerationParams(
-    maxTokens: 256,
+    maxTokens: 512,
     temp: 0.4,
     topP: 0.9,
   );
 
   final ModelService _modelService = ModelService.instance;
 
-  /// Streams the model's reply to [prompt] as text deltas. [history] holds the
-  /// earlier messages (oldest first) that give the model its context.
-  /// Cancelling the returned stream's subscription also stops generation in
-  /// the backend.
   Stream<String> generate(
     String prompt, {
     List<ChatMessageEntity> history = const [],

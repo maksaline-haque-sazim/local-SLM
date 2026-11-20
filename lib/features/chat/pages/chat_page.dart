@@ -28,6 +28,16 @@ class ChatPage extends GetView<ChatController> {
           icon: const Icon(Icons.arrow_back_ios_new_rounded),
           onPressed: Get.back,
         ),
+        actions: [
+          Obx(() {
+            final canReset = controller.messages.isNotEmpty;
+            return IconButton(
+              tooltip: TranslationKeys.chatReset.tr,
+              icon: const Icon(Icons.delete_outline_rounded),
+              onPressed: canReset ? controller.resetConversation : null,
+            );
+          }),
+        ],
       ),
       body: SafeArea(
         child: Obx(() {

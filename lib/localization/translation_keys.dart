@@ -77,7 +77,8 @@ enum TranslationKeys {
   chatYouLabel('chat_you_label'),
   chatModelLabel('chat_model_label'),
   chatGenerating('chat_generating'),
-  chatGenerationError('chat_generation_error');
+  chatGenerationError('chat_generation_error'),
+  chatReset('chat_reset');
 
   final String key;
 

@@ -15,6 +15,9 @@ android {
 
     androidResources {
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+        // Keep the GGUF model byte-for-byte in the APK/AAB instead of
+        // deflating it; it is already quantized and barely compresses.
+        noCompress += ["gguf"]
     }
 
     defaultConfig {
@@ -27,6 +30,7 @@ android {
 
     buildTypes {
         release {
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.debug

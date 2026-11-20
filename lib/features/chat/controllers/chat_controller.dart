@@ -122,6 +122,14 @@ class ChatController extends GetxController {
     }
   }
 
+  /// Stops any reply in progress and deletes every message.
+  Future<void> resetConversation() async {
+    await _generation?.cancel();
+    _generation = null;
+    isGenerating.value = false;
+    messages.clear();
+  }
+
   /// The last [_historyExchanges] completed prompt/reply pairs, oldest first.
   /// Pairs whose reply failed, was cancelled empty or is still running are
   /// skipped so the model never sees a dangling turn.
