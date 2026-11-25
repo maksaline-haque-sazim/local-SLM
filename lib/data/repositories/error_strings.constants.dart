@@ -1,4 +1,2 @@
-const String defaultClientErrorMessage = 'Something went wrong. Please try again.';
-
-
-
+const String defaultClientErrorMessage =
+    'Something went wrong. Please try again.';

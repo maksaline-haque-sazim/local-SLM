@@ -13,8 +13,7 @@ class ThemeService extends GetxService {
 
   bool get isDarkMode => _isDarkMode;
 
-  ThemeMode get themeMode =>
-      _isDarkMode ? ThemeMode.dark : ThemeMode.light;
+  ThemeMode get themeMode => _isDarkMode ? ThemeMode.dark : ThemeMode.light;
 
   Future<ThemeService> init() async {
     _isDarkMode = _box.read<bool>(_storageKey) ?? false;

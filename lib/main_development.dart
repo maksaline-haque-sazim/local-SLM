@@ -1,5 +1,6 @@
 import 'package:flutter_getx_starter_template/app_config.dart';
 import 'package:flutter_getx_starter_template/main.dart' as app;
+
 // After running `./flutterfire.config.sh development <project-id>`, uncomment:
 // import 'package:flutter_getx_starter_template/firebase_options_development.dart';
 

@@ -45,7 +45,8 @@ class SecondaryButton extends StatelessWidget {
     final custom = AppCustomColors.of(context);
 
     final Color effectiveBorderColor = borderColor ?? colors.outline;
-    final Color effectiveBgColor = backgroundColor ??
+    final Color effectiveBgColor =
+        backgroundColor ??
         (variant == SecondaryButtonVariant.filled
             ? (custom.surfaceSoft ?? colors.secondary)
             : Colors.transparent);
@@ -82,8 +83,7 @@ class SecondaryButton extends StatelessWidget {
                   width: 20,
                   child: CircularProgressIndicator(
                     strokeWidth: 2.5,
-                    valueColor:
-                        AlwaysStoppedAnimation<Color>(effectiveFgColor),
+                    valueColor: AlwaysStoppedAnimation<Color>(effectiveFgColor),
                   ),
                 ),
               )
@@ -93,10 +93,10 @@ class SecondaryButton extends StatelessWidget {
             ],
             Text(
               label,
-              style: textStyle ??
-                  AppTypography.getParagraphLargeBold(isArabic).copyWith(
-                    color: effectiveFgColor,
-                  ),
+              style:
+                  textStyle ??
+                  AppTypography.getParagraphLargeBold(isArabic)
+                      .copyWith(color: effectiveFgColor),
             ),
             if (!isLoading && trailing != null) ...[
               const SizedBox(width: 8),

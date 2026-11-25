@@ -47,22 +47,20 @@ class CoreMultiSelectDropdown<T extends Object> extends StatelessWidget {
     final colors = context.colors;
     final borderColor = colors.outline;
     final fillColor = colors.surface;
-    final hintStyle = AppTypography.getParagraphSmallRegular(isArabic).copyWith(
-      color: colors.onSurfaceVariant,
-    );
-    final textStyle = AppTypography.getParagraphRegular(isArabic).copyWith(
-      color: colors.onSurface,
-    );
-    final chipLabelStyle =
-        AppTypography.getParagraphSmallMedium(isArabic).copyWith(
-      color: colors.primary,
-    );
+    final hintStyle = AppTypography.getParagraphSmallRegular(isArabic)
+        .copyWith(color: colors.onSurfaceVariant);
+    final textStyle = AppTypography.getParagraphRegular(isArabic)
+        .copyWith(color: colors.onSurface);
+    final chipLabelStyle = AppTypography.getParagraphSmallMedium(isArabic)
+        .copyWith(color: colors.primary);
     final iconByValue = <T, IconData>{
       for (final option in options)
         if (option.icon != null) option.value: option.icon!,
     };
     final showIcons = iconByValue.isNotEmpty;
-    final chipBg = colors.primary.withValues(alpha: context.isDark ? 0.2 : 0.12);
+    final chipBg = colors.primary.withValues(
+      alpha: context.isDark ? 0.2 : 0.12,
+    );
 
     return MultiDropdown<T>(
       items: options
@@ -81,7 +79,8 @@ class CoreMultiSelectDropdown<T extends Object> extends StatelessWidget {
       validator: validator == null
           ? null
           : (selectedItems) {
-              final values = selectedItems
+              final values =
+                  selectedItems
                       ?.map((item) => item.value)
                       .toList(growable: false) ??
                   <T>[];
@@ -117,11 +116,7 @@ class CoreMultiSelectDropdown<T extends Object> extends StatelessWidget {
                       : textStyle,
                 ),
                 trailing: item.selected
-                    ? Icon(
-                        Icons.check_rounded,
-                        color: colors.primary,
-                        size: 20,
-                      )
+                    ? Icon(Icons.check_rounded, color: colors.primary, size: 20)
                     : null,
               );
             }

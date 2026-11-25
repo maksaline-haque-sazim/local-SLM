@@ -6,9 +6,7 @@ class ApiConstants {
     ApiEndpoints.authRefresh,
   ];
 
-  static List<String> languagePaths = [
-    ApiEndpoints.userById('0'),
-  ];
+  static List<String> languagePaths = [ApiEndpoints.userById('0')];
 
   static bool isUnauthenticatedPath(String requestPath) {
     final normalizedPath = requestPath.trim();

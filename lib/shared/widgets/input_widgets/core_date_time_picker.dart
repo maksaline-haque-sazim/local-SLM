@@ -51,7 +51,10 @@ class CoreDateTimePicker extends StatelessWidget {
           locale,
         ).format(value);
       case CoreDateTimePickerMode.dateAndTime:
-        final date = DateFormat(dateFormat ?? 'yyyy-MM-dd', locale).format(value);
+        final date = DateFormat(
+          dateFormat ?? 'yyyy-MM-dd',
+          locale,
+        ).format(value);
         final time = DateFormat(
           timeFormat ??
               (use24HourFormat ?? MediaQuery.alwaysUse24HourFormatOf(context)
@@ -95,8 +98,8 @@ class CoreDateTimePicker extends StatelessWidget {
         context: context,
         initialTime: TimeOfDay.fromDateTime(selected),
         builder: (context, child) {
-          final use24 = use24HourFormat ??
-              MediaQuery.alwaysUse24HourFormatOf(context);
+          final use24 =
+              use24HourFormat ?? MediaQuery.alwaysUse24HourFormatOf(context);
           return MediaQuery(
             data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: use24),
             child: child ?? const SizedBox.shrink(),

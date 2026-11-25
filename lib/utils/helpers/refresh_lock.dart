@@ -16,6 +16,3 @@ class RefreshLock {
     _completer = null;
   }
 }
-
-
-

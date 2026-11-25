@@ -25,30 +25,18 @@ class AsyncImage extends StatelessWidget {
 
     final placeholder = Container(
       alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: soft,
-        borderRadius: borderRadius,
-      ),
+      decoration: BoxDecoration(color: soft, borderRadius: borderRadius),
       child: SizedBox(
         width: 20,
         height: 20,
-        child: CircularProgressIndicator(
-          strokeWidth: 2,
-          color: colors.primary,
-        ),
+        child: CircularProgressIndicator(strokeWidth: 2, color: colors.primary),
       ),
     );
 
     final errorWidget = Container(
       alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: soft,
-        borderRadius: borderRadius,
-      ),
-      child: Icon(
-        Icons.broken_image_outlined,
-        color: colors.onSurfaceVariant,
-      ),
+      decoration: BoxDecoration(color: soft, borderRadius: borderRadius),
+      child: Icon(Icons.broken_image_outlined, color: colors.onSurfaceVariant),
     );
 
     final border = borderRadius ?? BorderRadius.zero;
@@ -67,10 +55,7 @@ class AsyncImage extends StatelessWidget {
 
     final future = imageFuture;
     if (future == null) {
-      return ClipRRect(
-        borderRadius: border,
-        child: errorWidget,
-      );
+      return ClipRRect(borderRadius: border, child: errorWidget);
     }
 
     return ClipRRect(

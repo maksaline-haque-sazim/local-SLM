@@ -31,7 +31,8 @@ class DeviceUtils {
 
   static void setFullScreen(bool enable) {
     SystemChrome.setEnabledSystemUIMode(
-        enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
+      enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
+    );
   }
 
   static double getScreenHeight() {
@@ -79,7 +80,8 @@ class DeviceUtils {
   }
 
   static Future<void> setPrefferedOrientations(
-      List<DeviceOrientation> orientations) async {
+    List<DeviceOrientation> orientations,
+  ) async {
     await SystemChrome.setPreferredOrientations(orientations);
   }
 

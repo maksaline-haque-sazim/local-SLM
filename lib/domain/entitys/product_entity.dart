@@ -18,4 +18,3 @@ class ProductEntity {
   bool get isInStock => stock > 0;
   bool get isLowStock => stock > 0 && stock <= 5;
 }
-

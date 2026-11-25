@@ -4,6 +4,3 @@ class ServerResponseException implements Exception {
   @override
   String toString() => 'ServerResponseException: $message';
 }
-
-
-

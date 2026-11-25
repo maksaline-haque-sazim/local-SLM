@@ -10,11 +10,7 @@ class DialogueBox {
         return AlertDialog(
           title: Text(title),
           content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text(body),
-              ],
-            ),
+            child: ListBody(children: <Widget>[Text(body)]),
           ),
           actions: <Widget>[
             TextButton(

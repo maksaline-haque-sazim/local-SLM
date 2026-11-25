@@ -49,8 +49,9 @@ class ApiClientService extends GetxService {
       dio.InterceptorsWrapper(
         onRequest: (options, handler) async {
           try {
-            final connected =
-                await NetworkManager.instance.isConnected(withSnackbar: false);
+            final connected = await NetworkManager.instance.isConnected(
+              withSnackbar: false,
+            );
             if (!connected) {
               return handler.reject(
                 dio.DioException(
@@ -92,8 +93,9 @@ class ApiClientService extends GetxService {
 
           if (response?.statusCode == 401) {
             final requestPath = response?.requestOptions.path ?? '';
-            final isRefreshRequest =
-                requestPath.contains(ApiEndpoints.authRefresh);
+            final isRefreshRequest = requestPath.contains(
+              ApiEndpoints.authRefresh,
+            );
 
             if (isRefreshRequest) {
               await _forceLogout();
@@ -106,8 +108,8 @@ class ApiClientService extends GetxService {
             if (!alreadyRetried) {
               await _refreshLock.lock();
               try {
-                final refreshSuccess =
-                    await TokenService.instance.attemptRefreshToken();
+                final refreshSuccess = await TokenService.instance
+                    .attemptRefreshToken();
                 if (!refreshSuccess) {
                   await _forceLogout();
                   _redirectToLoginOnce();
@@ -120,10 +122,7 @@ class ApiClientService extends GetxService {
                     ...reqOptions.headers,
                     'Authorization': 'Bearer ${_tokenService.authToken}',
                   },
-                  extra: {
-                    ...reqOptions.extra,
-                    '__retried401__': true,
-                  },
+                  extra: {...reqOptions.extra, '__retried401__': true},
                 );
                 try {
                   final retryResponse = await _dio.fetch(newOptions);

@@ -44,11 +44,13 @@ class CoreTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isArabic = Get.locale?.languageCode == 'ar';
     final colors = context.colors;
-    final bool isNumericKeyboard = keyboardType == TextInputType.number ||
+    final bool isNumericKeyboard =
+        keyboardType == TextInputType.number ||
         keyboardType == TextInputType.phone ||
         keyboardType == const TextInputType.numberWithOptions();
 
-    final TextDirection? effectiveTextDirection = textDirection ??
+    final TextDirection? effectiveTextDirection =
+        textDirection ??
         (isArabic && isNumericKeyboard ? TextDirection.ltr : null);
 
     return Column(
@@ -56,9 +58,8 @@ class CoreTextField extends StatelessWidget {
       children: [
         Text(
           label,
-          style: AppTypography.getParagraphSmallMedium(isArabic).copyWith(
-            color: colors.onSurface,
-          ),
+          style: AppTypography.getParagraphSmallMedium(isArabic)
+              .copyWith(color: colors.onSurface),
         ),
         const SizedBox(height: 8),
         TextFormField(
@@ -82,17 +83,13 @@ class CoreTextField extends StatelessWidget {
             required currentLength,
             required isFocused,
             required maxLength,
-          }) =>
-              null,
-          style: AppTypography.getParagraphRegular(isArabic).copyWith(
-            color: colors.onSurface,
-          ),
+          }) => null,
+          style: AppTypography.getParagraphRegular(isArabic)
+              .copyWith(color: colors.onSurface),
           decoration: InputDecoration(
             hintText: hintText,
-            hintStyle:
-                AppTypography.getParagraphSmallRegular(isArabic).copyWith(
-              color: colors.onSurfaceVariant,
-            ),
+            hintStyle: AppTypography.getParagraphSmallRegular(isArabic)
+                .copyWith(color: colors.onSurfaceVariant),
             suffixIcon: suffixIcon,
           ),
         ),

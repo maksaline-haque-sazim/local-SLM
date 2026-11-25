@@ -17,6 +17,3 @@ mixin RepositoryErrorHandlers {
     return response.statusText ?? 'Request failed';
   }
 }
-
-
-

@@ -125,4 +125,3 @@ class ProductsController extends GetxController {
 
   List<ProductEntity> get lowStockProducts => _productService.lowStockProducts;
 }
-

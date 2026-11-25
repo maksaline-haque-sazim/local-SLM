@@ -15,8 +15,7 @@ class LoginForm extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     final isArabic = Directionality.of(context) == TextDirection.rtl;
-    final linkColor =
-        Get.isDarkMode ? AppColors.info : AppColors.primary;
+    final linkColor = Get.isDarkMode ? AppColors.info : AppColors.primary;
 
     return Form(
       key: controller.formKey,
@@ -66,10 +65,8 @@ class LoginForm extends GetView<LoginController> {
             ),
             child: Text(
               TranslationKeys.loginGoToSignUp.tr,
-              style: AppTypography.getParagraphSmallBold(isArabic).copyWith(
-                color: linkColor,
-                fontWeight: FontWeight.bold,
-              ),
+              style: AppTypography.getParagraphSmallBold(isArabic)
+                  .copyWith(color: linkColor, fontWeight: FontWeight.bold),
             ),
           ),
         ],

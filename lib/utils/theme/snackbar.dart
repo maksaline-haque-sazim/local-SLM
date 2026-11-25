@@ -39,11 +39,7 @@ class AppSnackbar {
     );
   }
 
-  static void successSnackBar({
-    required title,
-    message = '',
-    int? duration,
-  }) {
+  static void successSnackBar({required title, message = '', int? duration}) {
     _showSnackbar(
       title: title.toString(),
       message: message.toString(),
@@ -53,11 +49,7 @@ class AppSnackbar {
     );
   }
 
-  static void warningSnackBar({
-    required title,
-    message = '',
-    int? duration,
-  }) {
+  static void warningSnackBar({required title, message = '', int? duration}) {
     _showSnackbar(
       title: title.toString(),
       message: message.toString(),
@@ -67,11 +59,7 @@ class AppSnackbar {
     );
   }
 
-  static void errorSnackBar({
-    required title,
-    message = '',
-    int? duration,
-  }) {
+  static void errorSnackBar({required title, message = '', int? duration}) {
     _showSnackbar(
       title: title.toString(),
       message: message.toString(),

@@ -109,10 +109,7 @@ class ProductsPage extends GetView<ProductsController> {
           ),
         ),
         actions: [
-          TextButton(
-            onPressed: () => Get.back(),
-            child: const Text('Cancel'),
-          ),
+          TextButton(onPressed: () => Get.back(), child: const Text('Cancel')),
           ElevatedButton(
             onPressed: () {
               controller.createProduct(
@@ -136,10 +133,7 @@ class ProductsPage extends GetView<ProductsController> {
         title: const Text('Delete Product'),
         content: const Text('Are you sure you want to delete this product?'),
         actions: [
-          TextButton(
-            onPressed: () => Get.back(),
-            child: const Text('Cancel'),
-          ),
+          TextButton(onPressed: () => Get.back(), child: const Text('Cancel')),
           ElevatedButton(
             onPressed: () {
               controller.deleteProduct(id);
@@ -153,4 +147,3 @@ class ProductsPage extends GetView<ProductsController> {
     );
   }
 }
-

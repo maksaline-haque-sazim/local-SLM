@@ -20,7 +20,7 @@ class ChatPage extends GetView<ChatController> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          TranslationKeys.chatTitle.tr,
+          controller.model.name,
           style: AppTypography.getHeading4(isArabic),
         ),
         centerTitle: true,
@@ -43,7 +43,6 @@ class ChatPage extends GetView<ChatController> {
         child: Obx(() {
           switch (controller.modelStatus.value) {
             case ModelLoadStatus.idle:
-            case ModelLoadStatus.preparing:
             case ModelLoadStatus.loading:
               return const ModelLoadingView();
             case ModelLoadStatus.error:

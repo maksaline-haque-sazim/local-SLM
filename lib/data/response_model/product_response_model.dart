@@ -40,7 +40,10 @@ class ProductResponseModel {
   }
 
   static List<ProductResponseModel> fromJsonList(List<dynamic> jsonList) {
-    return jsonList.map((json) => ProductResponseModel.fromJson(json as Map<String, dynamic>)).toList();
+    return jsonList
+        .map(
+          (json) => ProductResponseModel.fromJson(json as Map<String, dynamic>),
+        )
+        .toList();
   }
 }
-

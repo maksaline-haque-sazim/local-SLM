@@ -13,7 +13,9 @@ class GlobalBindings extends Bindings {
   void dependencies() {
     Get.put(NetworkManager());
     Get.put(TokenService()..init());
-    Get.put(ApiClientService()..init(enableGlobalLogging: enableApiGlobalLogging));
+    Get.put(
+      ApiClientService()..init(enableGlobalLogging: enableApiGlobalLogging),
+    );
     Get.put(AuthService());
   }
 }

@@ -20,19 +20,19 @@ class ProductRepository extends BaseRepository
   }
 
   @override
-  Future<List<ProductEntity>> getAllProducts(
-      {int page = 1, int limit = 10}) async {
+  Future<List<ProductEntity>> getAllProducts({
+    int page = 1,
+    int limit = 10,
+  }) async {
     final response = await getRequest(
       ApiEndpoints.products,
-      query: {
-        'page': page,
-        'limit': limit,
-      },
+      query: {'page': page, 'limit': limit},
       enableLog: true,
     );
 
-    final models =
-        ProductResponseModel.fromJsonList(response.body['data'] as List);
+    final models = ProductResponseModel.fromJsonList(
+      response.body['data'] as List,
+    );
     return models.map((model) => model.toEntity()).toList();
   }
 
@@ -50,7 +50,9 @@ class ProductRepository extends BaseRepository
 
   @override
   Future<ProductEntity> updateProduct(
-      String id, UpdateProductDto updateProductDto) async {
+    String id,
+    UpdateProductDto updateProductDto,
+  ) async {
     final response = await patchRequest(
       '${ApiEndpoints.products}/$id',
       updateProductDto.toJson(),
@@ -63,9 +65,6 @@ class ProductRepository extends BaseRepository
 
   @override
   Future<void> deleteProduct(String id) async {
-    await deleteRequest(
-      '${ApiEndpoints.products}/$id',
-      enableLog: true,
-    );
+    await deleteRequest('${ApiEndpoints.products}/$id', enableLog: true);
   }
 }

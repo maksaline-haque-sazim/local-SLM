@@ -29,10 +29,12 @@ class PillButton extends StatelessWidget {
     final custom = AppCustomColors.of(context);
     final bool isInteractive = enabled && !isLoading;
 
-    final Color bgColor =
-        isInteractive ? colors.primary : (custom.surfaceSoft ?? colors.secondary);
-    final Color borderColor =
-        isInteractive ? colors.primary : colors.primary.withValues(alpha: 0.16);
+    final Color bgColor = isInteractive
+        ? colors.primary
+        : (custom.surfaceSoft ?? colors.secondary);
+    final Color borderColor = isInteractive
+        ? colors.primary
+        : colors.primary.withValues(alpha: 0.16);
     final Color fgColor = isInteractive
         ? colors.onPrimary
         : (custom.textMuted ?? colors.onSurfaceVariant);
@@ -63,9 +65,8 @@ class PillButton extends StatelessWidget {
             else
               Text(
                 label,
-                style: AppTypography.getParagraphSmallBold(isArabic).copyWith(
-                  color: fgColor,
-                ),
+                style: AppTypography.getParagraphSmallBold(isArabic)
+                    .copyWith(color: fgColor),
               ),
           ],
         ),

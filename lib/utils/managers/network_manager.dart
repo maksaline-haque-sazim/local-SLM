@@ -17,8 +17,9 @@ class NetworkManager extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _connectivitySubscription =
-        _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(
+      _updateConnectionStatus,
+    );
   }
 
   @override
@@ -31,7 +32,6 @@ class NetworkManager extends GetxController {
       (connection) => connection != ConnectivityResult.none,
       orElse: () => ConnectivityResult.none,
     );
-
 
     if (_connectionStatus.value == newStatus) return;
     _connectionStatus.value = newStatus;

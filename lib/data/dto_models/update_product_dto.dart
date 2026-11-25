@@ -4,12 +4,7 @@ class UpdateProductDto {
   final double? price;
   final int? stock;
 
-  UpdateProductDto({
-    this.name,
-    this.description,
-    this.price,
-    this.stock,
-  });
+  UpdateProductDto({this.name, this.description, this.price, this.stock});
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
@@ -22,4 +17,3 @@ class UpdateProductDto {
     return data;
   }
 }
-

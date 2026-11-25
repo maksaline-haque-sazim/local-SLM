@@ -70,7 +70,8 @@ class PrimaryButton extends StatelessWidget {
             label,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: textStyle ??
+            style:
+                textStyle ??
                 AppTypography.getParagraphRegular(isArabic)
                     .copyWith(color: fgColor),
           ),

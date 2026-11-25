@@ -70,8 +70,10 @@ class _PhoneInputFieldState extends State<PhoneInputField> {
               ),
             ),
           ),
-          prefixIconConstraints:
-              const BoxConstraints(minWidth: 0, minHeight: 0),
+          prefixIconConstraints: const BoxConstraints(
+            minWidth: 0,
+            minHeight: 0,
+          ),
           hintText: widget.hintText,
         ),
       ),

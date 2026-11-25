@@ -4,7 +4,6 @@ import 'package:flutter_getx_starter_template/network/service/api_client.service
 import 'package:flutter_getx_starter_template/shared/services/token.service.dart';
 import 'package:get/get.dart';
 
-
 abstract class BaseRepository with RepositoryErrorHandlers {
   HttpClientAdapter get _httpClient =>
       ApiClientService.instance.httpClientInstance;
@@ -19,8 +18,12 @@ abstract class BaseRepository with RepositoryErrorHandlers {
     bool? enableLog,
   }) async {
     try {
-      Response<T> response = await _httpClient
-            .get(endpoint, query: query, headers: headers, enableLog: enableLog);
+      Response<T> response = await _httpClient.get(
+        endpoint,
+        query: query,
+        headers: headers,
+        enableLog: enableLog,
+      );
       if (!shouldHandleError) return response;
       if (!response.isOk) {
         String errorResponse = processErrorResponse(response);
@@ -43,10 +46,13 @@ abstract class BaseRepository with RepositoryErrorHandlers {
     bool? enableLog,
   }) async {
     try {
-      Response<T> response = await _httpClient.post(endpoint, body,
-          query: query,
-          headers: headers,
-          enableLog: enableLog);
+      Response<T> response = await _httpClient.post(
+        endpoint,
+        body,
+        query: query,
+        headers: headers,
+        enableLog: enableLog,
+      );
 
       if (!shouldHandleError) return response;
       if (!response.isOk) {
@@ -69,8 +75,12 @@ abstract class BaseRepository with RepositoryErrorHandlers {
     bool? enableLog,
   }) async {
     try {
-      Response<T> response = await _httpClient
-          .put(endpoint, body, query: query, enableLog: enableLog);
+      Response<T> response = await _httpClient.put(
+        endpoint,
+        body,
+        query: query,
+        enableLog: enableLog,
+      );
       if (!shouldHandleError) return response;
       if (!response.isOk) {
         String errorResponse = processErrorResponse(response);
@@ -92,8 +102,12 @@ abstract class BaseRepository with RepositoryErrorHandlers {
     bool? enableLog,
   }) async {
     try {
-      Response<T> response = await _httpClient
-          .patch(endpoint, body, query: query, enableLog: enableLog);
+      Response<T> response = await _httpClient.patch(
+        endpoint,
+        body,
+        query: query,
+        enableLog: enableLog,
+      );
       if (!shouldHandleError) return response;
       if (!response.isOk) {
         String errorResponse = processErrorResponse(response);
@@ -114,8 +128,11 @@ abstract class BaseRepository with RepositoryErrorHandlers {
     bool? enableLog,
   }) async {
     try {
-      Response<T> response = await _httpClient
-          .delete(endpoint, query: query, enableLog: enableLog);
+      Response<T> response = await _httpClient.delete(
+        endpoint,
+        query: query,
+        enableLog: enableLog,
+      );
       if (!shouldHandleError) return response;
       if (!response.isOk) {
         String errorResponse = processErrorResponse(response);

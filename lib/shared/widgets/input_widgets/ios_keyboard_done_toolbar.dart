@@ -47,9 +47,7 @@ class IosKeyboardDoneToolbar {
     }
     _removeOverlay();
     _overlayEntry = OverlayEntry(
-      builder: (overlayContext) => _IosKeyboardDoneBar(
-        focusNode: focusNode,
-      ),
+      builder: (overlayContext) => _IosKeyboardDoneBar(focusNode: focusNode),
     );
     Overlay.of(context).insert(_overlayEntry!);
   }
@@ -115,9 +113,7 @@ class _IosKeyboardDoneBarState extends State<_IosKeyboardDoneBar>
             vertical: Sizes.xs,
           ),
           decoration: BoxDecoration(
-            border: Border(
-              top: BorderSide(color: borderColor),
-            ),
+            border: Border(top: BorderSide(color: borderColor)),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -141,9 +137,7 @@ class _IosKeyboardDoneBarState extends State<_IosKeyboardDoneBar>
                     child: Text(
                       TranslationKeys.commonDone.tr,
                       style: AppTypography.getParagraphSmallBold(isArabic)
-                          .copyWith(
-                        color: colors.onPrimary,
-                      ),
+                          .copyWith(color: colors.onPrimary),
                     ),
                   ),
                 ),

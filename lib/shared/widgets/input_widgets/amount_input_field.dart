@@ -90,9 +90,8 @@ class _AmountInputFieldState extends State<AmountInputField> {
       children: [
         Text(
           widget.label,
-          style: AppTypography.getParagraphSmallMedium(isArabic).copyWith(
-            color: colors.onSurface,
-          ),
+          style: AppTypography.getParagraphSmallMedium(isArabic)
+              .copyWith(color: colors.onSurface),
         ),
         const SizedBox(height: 8),
         TextFormField(
@@ -109,15 +108,12 @@ class _AmountInputFieldState extends State<AmountInputField> {
           validator: widget.validator,
           textDirection: effectiveTextDirection,
           textAlign: TextAlign.left,
-          style: AppTypography.getParagraphRegular(isArabic).copyWith(
-            color: colors.onSurface,
-          ),
+          style: AppTypography.getParagraphRegular(isArabic)
+              .copyWith(color: colors.onSurface),
           decoration: InputDecoration(
             hintText: widget.hintText,
-            hintStyle:
-                AppTypography.getParagraphSmallRegular(isArabic).copyWith(
-              color: colors.onSurfaceVariant,
-            ),
+            hintStyle: AppTypography.getParagraphSmallRegular(isArabic)
+                .copyWith(color: colors.onSurfaceVariant),
           ),
         ),
       ],

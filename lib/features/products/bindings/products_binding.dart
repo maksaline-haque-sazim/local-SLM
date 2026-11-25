@@ -12,4 +12,3 @@ class ProductsBinding extends Bindings {
     Get.lazyPut<ProductsController>(() => ProductsController());
   }
 }
-

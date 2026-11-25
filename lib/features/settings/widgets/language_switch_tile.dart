@@ -29,9 +29,8 @@ class LanguageSwitchTile extends GetView<SettingsController> {
             children: [
               Text(
                 controller.isArabic.value ? 'AR' : 'EN',
-                style: AppTypography.getParagraphSmallBold(isArabic).copyWith(
-                      color: theme.colorScheme.primary,
-                    ),
+                style: AppTypography.getParagraphSmallBold(isArabic)
+                    .copyWith(color: theme.colorScheme.primary),
               ),
               const SizedBox(width: 8),
               Switch.adaptive(

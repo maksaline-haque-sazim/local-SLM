@@ -1,7 +1,4 @@
-enum EUserRole {
-  superUser,
-  admin,
-}
+enum EUserRole { superUser, admin }
 
 extension EUserRoleExtension on EUserRole {
   String get value {

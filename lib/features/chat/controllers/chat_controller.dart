@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_starter_template/domain/entitys/chat_message_entity.dart';
+import 'package:flutter_getx_starter_template/domain/entitys/slm_model_entity.dart';
 import 'package:flutter_getx_starter_template/shared/services/inference.service.dart';
 import 'package:flutter_getx_starter_template/shared/services/model.service.dart';
+import 'package:flutter_getx_starter_template/utils/constants/model_catalog.dart';
 import 'package:get/get.dart';
 
 class ChatController extends GetxController {
@@ -11,6 +13,9 @@ class ChatController extends GetxController {
 
   final ModelService _modelService = ModelService.instance;
   final InferenceService _inferenceService = InferenceService.instance;
+
+  /// The model chosen on the home page, passed as the route argument.
+  final SlmModelEntity model = ModelCatalog.byId(Get.arguments as String?)!;
 
   final TextEditingController promptController = TextEditingController();
 
@@ -28,7 +33,6 @@ class ChatController extends GetxController {
   int _nextMessageId = 0;
 
   Rx<ModelLoadStatus> get modelStatus => _modelService.status;
-  RxDouble get copyProgress => _modelService.copyProgress;
   RxnString get modelErrorDetails => _modelService.errorDetails;
 
   bool get canSend =>
@@ -60,7 +64,7 @@ class ChatController extends GetxController {
     super.onClose();
   }
 
-  Future<void> loadModel() => _modelService.loadModel();
+  Future<void> loadModel() => _modelService.loadModel(model);
 
   void sendPrompt() {
     if (!canSend) {

@@ -7,7 +7,7 @@ class InferenceService extends GetxService {
   static InferenceService get instance => Get.find<InferenceService>();
 
   static const GenerationParams _generationParams = GenerationParams(
-    maxTokens: 512,
+    maxTokens: 1024,
     temp: 0.4,
     topP: 0.9,
   );

@@ -9,8 +9,10 @@ abstract class AbstractProductRepository {
 
   Future<ProductEntity> createProduct(CreateProductDto createProductDto);
 
-  Future<ProductEntity> updateProduct(String id, UpdateProductDto updateProductDt);
+  Future<ProductEntity> updateProduct(
+    String id,
+    UpdateProductDto updateProductDt,
+  );
 
   Future<void> deleteProduct(String id);
 }
-
