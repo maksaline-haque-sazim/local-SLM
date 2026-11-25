@@ -10,11 +10,13 @@ import 'package:flutter_getx_starter_template/utils/theme/theme.dart';
 import 'package:flutter_getx_starter_template/utils/theme/theme_service.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:flutter_getx_starter_template/shared/services/model_download.service.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-Future<void> main({AppConfig? config, FirebaseOptions? firebaseOptions}) async {
+Future<void> main({
+  AppConfig? config,
+  FirebaseOptions? firebaseOptions,
+}) async {
   final WidgetsBinding widgetsBinding =
       WidgetsFlutterBinding.ensureInitialized();
 
@@ -28,8 +30,7 @@ Future<void> main({AppConfig? config, FirebaseOptions? firebaseOptions}) async {
 
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  final appConfig =
-      config ??
+  final appConfig = config ??
       await AppConfig.create(
         appName: 'Flutter Template Dev',
         environment: Environment.development,
@@ -43,11 +44,6 @@ Future<void> main({AppConfig? config, FirebaseOptions? firebaseOptions}) async {
 
   await Get.putAsync<EnvConfigService>(
     () async => EnvConfigService(appConfig).init(),
-  );
-
-  await Get.putAsync<ModelDownloadService>(
-    () => ModelDownloadService().init(),
-    permanent: true,
   );
 
   runApp(App(config: appConfig));
@@ -77,7 +73,9 @@ class App extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      initialBinding: GlobalBindings(enableApiGlobalLogging: true),
+      initialBinding: GlobalBindings(
+        enableApiGlobalLogging: true,
+      ),
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeService.themeMode,

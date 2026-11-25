@@ -15,6 +15,9 @@ android {
 
     androidResources {
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+        // Keep the GGUF model byte-for-byte in the APK/AAB instead of
+        // deflating it; it is already quantized and barely compresses.
+        noCompress += ["gguf"]
     }
 
     defaultConfig {
