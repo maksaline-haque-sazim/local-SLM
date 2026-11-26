@@ -18,8 +18,6 @@ class ModelDownloadState {
 
   final ModelDownloadStatus status;
 
-  /// 0..1. For a model that is not downloading, this is how much of a
-  /// partial file already exists, so the download can be resumed.
   final double progress;
   final String? error;
 
@@ -27,18 +25,12 @@ class ModelDownloadState {
   bool get isDownloaded => status == ModelDownloadStatus.downloaded;
 }
 
-/// Downloads, resumes, cancels and deletes model files in app storage.
-///
-/// Files are streamed to disk through Dio so they never sit in memory, which
-/// is what makes models above 1 GB possible.
 class ModelDownloadService extends GetxService {
   static ModelDownloadService get instance => Get.find<ModelDownloadService>();
 
   final Dio _dio = Dio(
     BaseOptions(
       connectTimeout: const Duration(seconds: 20),
-      // Applies between chunks, so a stalled connection fails instead of
-      // hanging forever; the partial file is kept for resuming.
       receiveTimeout: const Duration(seconds: 30),
     ),
   );
@@ -80,8 +72,6 @@ class ModelDownloadService extends GetxService {
     return File('${directory.path}/${model.fileName}');
   }
 
-  /// Starts (or resumes) the download. Completes when it finishes, fails or
-  /// is cancelled; the outcome is published through [states].
   Future<void> download(SlmModelEntity model) async {
     if (stateOf(model).isDownloading || stateOf(model).isDownloaded) {
       return;
@@ -94,7 +84,6 @@ class ModelDownloadService extends GetxService {
 
     var received = await partial.exists() ? await partial.length() : 0;
     if (received >= model.sizeBytes) {
-      // A leftover that is not a valid partial download; start over.
       await partial.delete();
       received = 0;
     }
@@ -116,7 +105,6 @@ class ModelDownloadService extends GetxService {
         ),
       );
 
-      // 200 means the server ignored the Range header: restart from zero.
       final resuming = response.statusCode == 206 && received > 0;
       if (!resuming) {
         received = 0;
@@ -151,7 +139,6 @@ class ModelDownloadService extends GetxService {
     } on DioException catch (error) {
       await _closeQuietly(sink);
       if (CancelToken.isCancel(error)) {
-        // Cancelling keeps the partial file so the download can resume.
         _setState(
           model,
           ModelDownloadStatus.notDownloaded,
@@ -172,7 +159,6 @@ class ModelDownloadService extends GetxService {
     _cancelTokens[model.id]?.cancel();
   }
 
-  /// Removes the downloaded file and any partial download.
   Future<void> delete(SlmModelEntity model) async {
     cancel(model);
     final file = await fileFor(model);

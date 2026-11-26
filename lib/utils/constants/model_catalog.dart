@@ -1,7 +1,5 @@
 import 'package:flutter_getx_starter_template/domain/entitys/slm_model_entity.dart';
 
-/// Models offered for download. All are 4-bit (Q4_K_M) GGUF files hosted on
-/// Hugging Face; sizes are the exact byte counts reported by the host.
 class ModelCatalog {
   ModelCatalog._();
 

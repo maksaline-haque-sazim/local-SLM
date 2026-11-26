@@ -42,7 +42,6 @@ class ModelService extends GetxService {
       return;
     }
     if (isReady) {
-      // A different model is in memory; free it before loading this one.
       await _unloadModel();
     }
 
