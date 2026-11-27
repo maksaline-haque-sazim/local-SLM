@@ -51,6 +51,10 @@ class MarkdownMessage extends StatelessWidget {
       ),
     );
 
-    return MarkdownBody(data: data, selectable: true, styleSheet: styleSheet);
+    // SelectionArea (not MarkdownBody.selectable) lets one drag select across
+    // paragraphs, lists and code blocks.
+    return SelectionArea(
+      child: MarkdownBody(data: data, styleSheet: styleSheet),
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getx_starter_template/domain/entitys/chat_message_entity.dart';
 import 'package:flutter_getx_starter_template/features/chat/widgets/generating_indicator.dart';
 import 'package:flutter_getx_starter_template/features/chat/widgets/markdown_message.dart';
+import 'package:flutter_getx_starter_template/features/chat/widgets/message_actions.dart';
 import 'package:flutter_getx_starter_template/localization/translation_keys.dart';
 import 'package:flutter_getx_starter_template/utils/constants/sizes.dart';
 import 'package:flutter_getx_starter_template/utils/theme/app_typography.dart';
@@ -81,6 +82,10 @@ class MessageBubble extends StatelessWidget {
             style: AppTypography.getParagraphSmallRegular(isArabic)
                 .copyWith(color: foregroundColor),
           ),
+        if (!message.isLoading) ...[
+          const SizedBox(height: Sizes.sm),
+          MessageActions(message: message, color: foregroundColor),
+        ],
       ],
     );
   }

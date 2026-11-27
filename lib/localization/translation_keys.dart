@@ -82,7 +82,11 @@ enum TranslationKeys {
   chatModelLabel('chat_model_label'),
   chatGenerating('chat_generating'),
   chatGenerationError('chat_generation_error'),
-  chatReset('chat_reset');
+  chatReset('chat_reset'),
+  chatCopy('chat_copy'),
+  chatCopied('chat_copied'),
+  chatRegenerate('chat_regenerate'),
+  chatStats('chat_stats');
 
   final String key;
 

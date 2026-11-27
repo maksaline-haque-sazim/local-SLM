@@ -109,6 +109,10 @@ class AppTranslations extends Translations {
       TranslationKeys.chatGenerationError.key:
           'Something went wrong while generating a reply.',
       TranslationKeys.chatReset.key: 'Reset conversation',
+      TranslationKeys.chatCopy.key: 'Copy',
+      TranslationKeys.chatCopied.key: 'Copied to clipboard',
+      TranslationKeys.chatRegenerate.key: 'Regenerate',
+      TranslationKeys.chatStats.key: '@rate tokens/min  ·  @time',
     },
     'ar': {
       TranslationKeys.loginTitle.key: 'مرحباً بعودتك',
@@ -208,6 +212,10 @@ class AppTranslations extends Translations {
       TranslationKeys.chatGenerating.key: 'جارٍ التفكير',
       TranslationKeys.chatGenerationError.key: 'حدث خطأ أثناء إنشاء الرد.',
       TranslationKeys.chatReset.key: 'إعادة تعيين المحادثة',
+      TranslationKeys.chatCopy.key: 'نسخ',
+      TranslationKeys.chatCopied.key: 'تم النسخ إلى الحافظة',
+      TranslationKeys.chatRegenerate.key: 'إعادة الإنشاء',
+      TranslationKeys.chatStats.key: '@rate رمز/دقيقة  ·  @time',
     },
   };
 }
